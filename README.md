@@ -5,7 +5,7 @@ Translated from japanese to english by Vivien Richter <vivien-richter@outlook.de
 ## License
 MIT
 
-# KYRokuyoクラスの使い方
+# KYRokuyo class usage
       Required files:
       KYRokuyo.h
       KYRokuyo.m
