@@ -1,5 +1,6 @@
 # rokuyo
-Example class, that dermines the so called 'Rokuyou' from a gregorian calendar date with the help of the lunar calendar.
+A class, that dermines the so called 'Rokuyou' from a gregorian calendar date with the help of the lunar calendar.
+Contains a sample.
 Translated from japanese to english by Vivien Richter <vivien-richter@outlook.de>
 
 ## License
