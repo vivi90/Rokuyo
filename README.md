@@ -1,26 +1,27 @@
 # rokuyo
-西暦年月日から旧暦と六曜を求めるクラスとそのサンプル
+Example class, that dermines the so called 'Rokuyou' from a gregorian calendar date with the help of the lunar calendar.
+Translated from japanese to english by Vivien Richter <vivien-richter@outlook.de>
 
 ## License
 MIT
 
 # KYRokuyoクラスの使い方
-      必要ファイル
+      Required files:
       KYRokuyo.h
       KYRokuyo.m
       kyureki.plist
       
-      // メソッド
-      // plistから旧暦テーブルを取得
+      // Method
+      // Gets the lunar calendar table from the plist
       - (id)init
-      // 年月日から旧暦を求め、六曜を返す
+      // Determines the lunar calendar by date and returns the 'Rokuyou'
       - (NSString *)sinrekiToRokuyoWithYear:(int)inYear month:(int)inMonth day:(int)inDay
     
-      // プロパティ
-      kyuMonth;	// 旧暦の月
-      kyuDay;	// 旧暦の日
+      // Properties
+      kyuMonth;	// Month of lunar calendar
+      kyuDay;	// Day of lunar calendar
  
-      // plistの内容
+      // Content of plist
     [
       [
         {"#year" : "2007"},
@@ -38,20 +39,23 @@ MIT
       ],
      ]
     
-    各月の10桁は以下の内容
-      MMDDccmmdd:　西暦の年月の一日に対応する旧暦の月日
-      mmddCCmmdd: 一か月の中で旧暦が次の月に変わる日（次の月に変わらないときは"99"を記述)
-      mmddccMMDD: CCの日の旧暦の月日　　　　　　　　　　　（次の月に変わらないときは"0000"を記述)
-    例）
-    2022年の12月1日は旧暦では(11)月(08)日。 12月(23)日に、旧暦が(12)月(01)日に変わる。
+    Each month with a value of no more than 10 digits
+      MMDDccmmdd: The corresponding lunar calendar date to the beginning day of the month at the gregorian celendar
+      mmddCCmmdd: The days, that changes in one month to the next month by the lunar calendar (When don't changes to the next month, then '99' is written.)
+      mmddccMMDD: CC days of the lunar calendar date (When don't changes to the next month, then '0000' is written.)
+    Example:
+    The 1st of December 2022 is the 8th of November at the lunar calendar.
+    The 23rd of December changes to the 1st of December at the lunar calendar.
       ---> "1108231201"  
     
-    １ヶ月の中で２回月が変わる場合は16桁とします
-      MMDDccmmddccmmdd:　西暦の年月の一日に対応する旧暦の月日
-      mmddCCmmddccmmdd: 一か月の中で旧暦が次の月に変わる日
-      mmddccMMDDccmmdd: CCの日の旧暦の月日
-      mmddccmmddCCmmdd: 一か月の中で旧暦が次の月に変わる日（２回目）
-      mmddccMMddccMMDD: CCの日の旧暦の月日
-    例)
-    2005年の12月1日は旧暦では(10)月(30)日。12月(02)日に、旧暦が(11)月(01)日に変わる。12月(31)日に旧暦が(12)月(01)日に変わる。
+    In the case, that the moon changes two times in a month, 16 digits will be assumed
+      MMDDccmmddccmmdd: The corresponding lunar calendar date to the beginning day of the month at the gregorian celendar
+      mmddCCmmddccmmdd: The days, that changes in one month to the next month by the lunar calendar
+      mmddccMMDDccmmdd: CC days of the lunar calendar date
+      mmddccmmddCCmmdd: The days, that changes in one month to the next month by the lunar calendar (2 times)
+      mmddccMMddccMMDD: CC days of the lunar calendar date
+    Example:
+    The 1st of December 2005 is the 30th of October at the lunar calendar.
+    The 2nd of December changes to the 1st of November at the lunar calendar.
+    The 31st of December changes to the 1st of December at the lunar calendar.
       ---> "1030021101311201"
