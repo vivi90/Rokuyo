@@ -13,8 +13,8 @@
 @interface KYRokuyo : NSObject {
 }
 
-@property (assign, nonatomic) int kyuMonth;	// inMonthに対応する旧暦の月
-@property (assign, nonatomic) int kyuDay;	// inDayに対応する旧暦の日
+@property (assign, nonatomic) int kyuMonth;	// With 'inMonth' corresponding lunar calendar month
+@property (assign, nonatomic) int kyuDay;	// With 'inDay' corresponding lunar calendar day
 
 - (id)init;
 - (NSString *)sinrekiToRokuyoWithYear:(int)inYear month:(int)inMonth day:(int)inDay;
