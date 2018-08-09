@@ -1,12 +1,11 @@
 # rokuyo
 A class, that dermines the so called 'Rokuyou' from a gregorian calendar date with the help of the lunar calendar.
 Contains a sample.
-Translated from japanese to english by Vivien Richter <vivien-richter@outlook.de>
 
 ## License
 MIT
 
-# KYRokuyo class usage
+## KYRokuyo class usage
       Required files:
       KYRokuyo.h
       KYRokuyo.m
@@ -60,3 +59,9 @@ MIT
     The 2nd of December changes to the 1st of November at the lunar calendar.
     The 31st of December changes to the 1st of December at the lunar calendar.
       ---> "1030021101311201"
+
+## Credits
+Created by kyasu (Keietsu Yasuhara <kyasu@mac.com>).
+See: https://github.com/kyasusoft/Rokuyo
+Translated from japanese to english by Vivien Richter <vivien-richter@outlook.de>.
+See: https://github.com/vivi90/Rokuyo
